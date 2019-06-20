@@ -8,6 +8,13 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
 import { EqualValidatorDirective } from './equal-validator.directive';
 
+import { Route, RouterModule } from '@angular/router';
+
+const appRoutes: Route[] = [
+  { path: '', component: LoginComponent},
+  { path: 'home', component: HomeComponent},
+  { path: 'signup', component: SignUpComponent}
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +25,8 @@ import { EqualValidatorDirective } from './equal-validator.directive';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
