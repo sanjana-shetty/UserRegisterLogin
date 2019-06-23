@@ -6,7 +6,7 @@
         <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
           <div class="form-group">
             <label for="userName">User Name</label>
-            <input type="text" class="form-control" [(ngModel)]="model.userName" #userName="ngModel" [ngClass]="{'is-invalid':f.submitted && userName.invalid}" name="userName" required />
+            <input  id='userName'  type="text" class="form-control" [(ngModel)]="model.userName" #userName="ngModel" [ngClass]="{'is-invalid':f.submitted && userName.invalid}" name="userName" required />
             <div class="invalid-feedback">
               <div>User Name is required</div>
             </div>
@@ -20,7 +20,7 @@
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" class="form-control" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{'is-invalid':f.submitted && email.invalid}" name="email" required email />
+            <input id='email' type="text" class="form-control" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{'is-invalid':f.submitted && email.invalid}" name="email" required email />
             <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
               <div *ngIf="email.errors.required">Email Name is required</div>
               <div *ngIf="email.errors.email">Email must be a valid email Address</div>
@@ -44,7 +44,7 @@
         </div>
         <div class="form-group">
           <label for="mobilenumber">Mobile Number</label>
-          <input type="text" class="form-control" [(ngModel)]="model.mobilenumber" #mobilenumber="ngModel" [ngClass]="{'is-invalid':f.submitted && mobilenumber.invalid}" name="mobilenumber" required pattern="[0-9]*" minlength="10"  maxlength="10" />
+          <input id='mobilenumber' type="text" class="form-control" [(ngModel)]="model.mobilenumber" #mobilenumber="ngModel" [ngClass]="{'is-invalid':f.submitted && mobilenumber.invalid}" name="mobilenumber" required pattern="[0-9]*" minlength="10"  maxlength="10" />
           <div *ngIf="f.submitted && mobilenumber.invalid" class="invalid-feedback">
             <div *ngIf="mobilenumber.errors.required">Mobile Number is required</div>
             <div *ngIf="mobilenumber.errors.minlength">Mobile Number should be 10digit</div>

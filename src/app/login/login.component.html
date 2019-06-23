@@ -6,14 +6,14 @@
         <form name="form" (ngSubmit)="f.form.valid && onLoginSubmit()" #f="ngForm" novalidate>
           <div class="form-group">
             <label for="LoginId"></label>
-            <input type="text" class="form-control" [(ngModel)]="model.LoginId" #LoginId="ngModel" [ngClass]="{'is-invalid':f.submitted && LoginId.invalid}" name="LoginId" placeholder='UserName/Email/Mobile Number' required />
+            <input id='LoginId' type="text" class="form-control" [(ngModel)]="model.LoginId" #LoginId="ngModel" [ngClass]="{'is-invalid':f.submitted && LoginId.invalid}" name="LoginId" placeholder='UserName/Email/Mobile Number' required />
             <div class="invalid-feedback">
               <div>LoginId is required</div>
             </div>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
+            <input id='password' type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
             <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
                 <div *ngIf="password.errors.required">Password is required</div>
                 <div *ngIf="password.errors.minlength">Password must be at least 8 characters</div>
